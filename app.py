@@ -50,12 +50,12 @@ st.markdown(
 
     .stApp {{
 
-        background-color: #eef6fa;
+        background-color: #071b2a;
 
         background-image:
             linear-gradient(
-                rgba(247, 252, 254, 0.86),
-                rgba(247, 252, 254, 0.86)
+                rgba(5, 25, 39, 0.82),
+                rgba(5, 25, 39, 0.82)
             ),
             url("data:image/png;base64,{background_base64}");
 
@@ -89,11 +89,11 @@ st.markdown(
 
     [data-testid="stWidgetLabel"] p {{
 
-        color: #163f5e !important;
-
+        color: #eaf7fb !important;
         font-weight: 700 !important;
-
         font-size: 14px !important;
+        opacity: 1 !important;
+        -webkit-text-fill-color: #eaf7fb !important;
     }}
 
 
@@ -181,19 +181,39 @@ st.markdown(
 
     button[data-baseweb="tab"] {{
 
-        color: #49697c !important;
-
+        color: #123f62 !important;
         font-weight: 700 !important;
-
         font-size: 14px !important;
+        opacity: 1 !important;
+        -webkit-text-fill-color: #123f62 !important;
     }}
 
+    button[data-baseweb="tab"] *,
+    button[data-baseweb="tab"] p,
+    button[data-baseweb="tab"] span,
+    button[data-baseweb="tab"] div {{
+
+        color: #123f62 !important;
+        opacity: 1 !important;
+        -webkit-text-fill-color: #123f62 !important;
+    }}
 
     button[data-baseweb="tab"][aria-selected="true"] {{
 
         color: #0b6794 !important;
-
         font-weight: 800 !important;
+        opacity: 1 !important;
+        -webkit-text-fill-color: #0b6794 !important;
+    }}
+
+    button[data-baseweb="tab"][aria-selected="true"] *,
+    button[data-baseweb="tab"][aria-selected="true"] p,
+    button[data-baseweb="tab"][aria-selected="true"] span,
+    button[data-baseweb="tab"][aria-selected="true"] div {{
+
+        color: #0b6794 !important;
+        opacity: 1 !important;
+        -webkit-text-fill-color: #0b6794 !important;
     }}
 
 
@@ -245,15 +265,40 @@ st.markdown(
 
     [data-testid="stMetric"] {{
 
-        background: rgba(255,255,255,0.95);
-
-        border: 1px solid #d8e7ef;
-
+        background: rgba(255,255,255,0.99) !important;
+        border: 1px solid #d8e7ef !important;
         border-radius: 15px;
-
         padding: 15px;
+        opacity: 1 !important;
     }}
 
+    [data-testid="stMetricLabel"],
+    [data-testid="stMetricLabel"] *,
+    [data-testid="stMetricLabel"] div,
+    [data-testid="stMetricLabel"] p {{
+
+        color: #607786 !important;
+        opacity: 1 !important;
+        -webkit-text-fill-color: #607786 !important;
+    }}
+
+    [data-testid="stMetricValue"],
+    [data-testid="stMetricValue"] *,
+    [data-testid="stMetricValue"] div,
+    [data-testid="stMetricValue"] p {{
+
+        color: #123f62 !important;
+        opacity: 1 !important;
+        -webkit-text-fill-color: #123f62 !important;
+        font-weight: 800 !important;
+    }}
+
+    /* Keep the full "Balanced XGBoost" model name visible. */
+    div[data-testid="stHorizontalBlock"] > div:nth-child(1) [data-testid="stMetricValue"] {{
+        font-size: 26px !important;
+        white-space: nowrap !important;
+        letter-spacing: -0.4px !important;
+    }}
 
     /* =====================================================
        DIVIDER
@@ -486,7 +531,7 @@ with info3:
 st.html(
     """
     <div style="
-        color:#123f62;
+        color:#eaf7fb;
         font-size:27px;
         font-weight:750;
         margin-top:30px;
@@ -875,7 +920,7 @@ if predict_button:
     st.html(
         """
         <div style="
-            color:#123f62;
+            color:#eaf7fb;
             font-size:27px;
             font-weight:750;
             margin-top:30px;
@@ -1004,7 +1049,7 @@ if predict_button:
     st.html(
         """
         <div style="
-            color:#123f62;
+            color:#eaf7fb;
             font-size:27px;
             font-weight:750;
             margin-top:30px;
@@ -1278,7 +1323,7 @@ st.markdown("---")
 st.html(
     """
     <div style="
-        color:#123f62;
+        color:#eaf7fb;
         font-size:27px;
         font-weight:750;
         margin-top:30px;
@@ -1375,7 +1420,7 @@ with step4:
 st.html(
     """
     <div style="
-        color:#123f62;
+        color:#eaf7fb;
         font-size:27px;
         font-weight:750;
         margin-top:30px;
@@ -1467,11 +1512,11 @@ st.html(
     """
     <div style="
         text-align:center;
-        color:#80919d;
+        color:#b8ccd6;
         font-size:13px;
         margin-top:45px;
         padding-top:20px;
-        border-top:1px solid #dce6ec;
+        border-top:1px solid rgba(220,230,236,0.25);
     ">
 
         <b>Diabetes Risk AI</b>
